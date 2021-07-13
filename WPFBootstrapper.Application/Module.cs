@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Autofac;
+using Caliburn.Micro;
 using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Autofac;
-using Caliburn.Micro;
 
 namespace WPFBootstrapper.Application
 {
@@ -45,11 +41,8 @@ namespace WPFBootstrapper.Application
                 //  must be a type that ends with ViewModel
                 .Where(type => type.Name.EndsWith("ViewModel"))
                 //  must implement INotifyPropertyChanged (deriving from PropertyChangedBase will statisfy this)
-                .Where(type =>
-                {
-                    return type.GetInterface(typeof(INotifyPropertyChanged).Name) != null &&
-                           type.GetInterface($"I{type.Name}") != null;
-                })
+                .Where(type => type.GetInterface(typeof(INotifyPropertyChanged).Name) != null &&
+                               type.GetInterface($"I{type.Name}") != null)
                 //  registered as self
                 .As(type => type.GetInterface($"I{type.Name}"))
                 //  always create a new one

@@ -9,6 +9,6 @@
              Height="450"
              Width="800">
     <Grid>
-            <TextBox>Hi</TextBox>
+            <TextBlock Text="{Binding Text}"/>
     </Grid>
 </UserControl>
