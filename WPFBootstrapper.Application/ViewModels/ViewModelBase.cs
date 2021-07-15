@@ -7,7 +7,7 @@ using Caliburn.Micro;
 
 namespace WPFBootstrapper.Application.ViewModels
 {
-    class ViewModelBase : Conductor<Screen>.Collection.OneActive
+    class ViewModelBase : Conductor<object>.Collection.OneActive
     {
     }
 }

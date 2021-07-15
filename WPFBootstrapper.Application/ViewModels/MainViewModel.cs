@@ -16,5 +16,10 @@ namespace WPFBootstrapper.Application.ViewModels
                 NotifyOfPropertyChange();
             }
         }
+
+        public void ChangeText()
+        {
+            Text = "Now changed";
+        }
     }
 }

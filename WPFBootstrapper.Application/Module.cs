@@ -43,7 +43,7 @@ namespace WPFBootstrapper.Application
                 //  must implement INotifyPropertyChanged (deriving from PropertyChangedBase will statisfy this)
                 .Where(type => type.GetInterface(typeof(INotifyPropertyChanged).Name) != null &&
                                type.GetInterface($"I{type.Name}") != null)
-                //  registered as self
+                //  registered as interface(could be changed to self)
                 .As(type => type.GetInterface($"I{type.Name}"))
                 //  always create a new one
                 .InstancePerDependency();

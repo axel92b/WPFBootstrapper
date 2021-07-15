@@ -1,14 +1,17 @@
-﻿<UserControl x:Class="WPFBootstrapper.Application.Views.MainView"
+﻿<Window x:Class="WPFBootstrapper.Application.Views.MainView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WPFBootstrapper.Application.Views"
+             xmlns:cal="http://www.caliburnproject.org"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              Height="450"
-             Width="800">
-    <Grid>
+             Width="800"
+             Title="WPFBootstrapper" WindowStartupLocation="CenterScreen">
+    <StackPanel>
             <TextBlock Text="{Binding Text}"/>
-    </Grid>
-</UserControl>
+            <Button Height="25" Width="50" cal:Message.Attach="[Event Click] = [Action ChangeText()]">Click me</Button>
+    </StackPanel>
+</Window>
