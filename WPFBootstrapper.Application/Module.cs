@@ -40,7 +40,7 @@ namespace WPFBootstrapper.Application
             builder.RegisterAssemblyTypes(AssemblySource.Instance.ToArray())
                 //  must be a type that ends with ViewModel
                 .Where(type => type.Name.EndsWith("ViewModel"))
-                //  must implement INotifyPropertyChanged (deriving from PropertyChangedBase will statisfy this)
+                //  must implement INotifyPropertyChanged (deriving from PropertyChangedBase will satisfy this)
                 .Where(type => type.GetInterface(typeof(INotifyPropertyChanged).Name) != null &&
                                type.GetInterface($"I{type.Name}") != null)
                 //  registered as interface(could be changed to self)
